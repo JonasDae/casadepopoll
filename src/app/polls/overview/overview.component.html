@@ -1,0 +1,28 @@
+<link href="https://unpkg.com/@angular/material/prebuilt-themes/indigo-pink.css" rel="stylesheet">
+<h1>Overzicht polls</h1>
+<mat-grid-list cols="5" rowHeight="2:1">
+	<mat-grid-tile *ngFor="let p of (polls | async)">
+		<a>
+			<mat-card>
+				<mat-card-title>
+					{{p.name}}
+				</mat-card-title>
+				<mat-card-content>
+					<button mat-button> <a [routerLink]="['/poll',p.id]">Invullen</a></button>
+				</mat-card-content>
+			</mat-card>
+		</a>
+	</mat-grid-tile>
+	<mat-grid-tile>
+		<a>
+			<mat-card>
+				<mat-card-title>
+					Nieuwe poll
+				</mat-card-title>
+				<mat-card-content>
+					<button mat-button color="warn">Maak aan</button>
+				</mat-card-content>
+			</mat-card>
+		</a>
+	</mat-grid-tile>
+</mat-grid-list>

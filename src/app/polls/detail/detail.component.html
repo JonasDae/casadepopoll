@@ -1,0 +1,7 @@
+<h1> {{poll.name}} </h1>
+<ul>
+	<li *ngFor="let a of (answers | async)">
+		{{a.answer}}
+		<button mat-button (click)="vote(a)">Stem!</button>
+	</li>
+</ul>
